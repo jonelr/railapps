@@ -42,6 +42,8 @@ class WorkRequestsController < ApplicationController
   # POST /work_requests.json
   def create
     @work_request = WorkRequest.new(params[:work_request])
+    Rails.logger.debug "Params value: " 
+    Rails.logger.debug params[:work_request]
 
     respond_to do |format|
       if @work_request.save
