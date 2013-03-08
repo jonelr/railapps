@@ -1,4 +1,8 @@
 Workrequest::Application.routes.draw do
+  resources :work_requests
+
+  resources :profiles
+
   get "welcome/index"
 
   devise_for :users

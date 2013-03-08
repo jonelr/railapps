@@ -1,0 +1,37 @@
+<h1>Listing work_requests</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Businessunit</th>
+    <th>Category</th>
+    <th>Status</th>
+    <th>Plant</th>
+    <th>Area</th>
+    <th>Requestors</th>
+    <th>Queue</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @work_requests.each do |work_request| %>
+  <tr>
+    <td><%= work_request.title %></td>
+    <td><%= work_request.businessunit_id %></td>
+    <td><%= work_request.category_id %></td>
+    <td><%= work_request.status_id %></td>
+    <td><%= work_request.plant_id %></td>
+    <td><%= work_request.area_id %></td>
+    <td><%= work_request.requestors %></td>
+    <td><%= work_request.queue %></td>
+    <td><%= link_to 'Show', work_request %></td>
+    <td><%= link_to 'Edit', edit_work_request_path(work_request) %></td>
+    <td><%= link_to 'Destroy', work_request, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Work request', new_work_request_path %>

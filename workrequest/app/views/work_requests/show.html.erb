@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @work_request.title %>
+</p>
+
+<p>
+  <b>Businessunit:</b>
+  <%= @work_request.businessunit_id %>
+</p>
+
+<p>
+  <b>Category:</b>
+  <%= @work_request.category_id %>
+</p>
+
+<p>
+  <b>Status:</b>
+  <%= @work_request.status_id %>
+</p>
+
+<p>
+  <b>Plant:</b>
+  <%= @work_request.plant_id %>
+</p>
+
+<p>
+  <b>Area:</b>
+  <%= @work_request.area_id %>
+</p>
+
+<p>
+  <b>Requestors:</b>
+  <%= @work_request.requestors %>
+</p>
+
+<p>
+  <b>Queue:</b>
+  <%= @work_request.queue %>
+</p>
+
+
+<%= link_to 'Edit', edit_work_request_path(@work_request) %> |
+<%= link_to 'Back', work_requests_path %>
