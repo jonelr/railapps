@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130307215204) do
+ActiveRecord::Schema.define(:version => 20130308023855) do
 
   create_table "areas", :force => true do |t|
     t.string   "title"
@@ -26,6 +26,12 @@ ActiveRecord::Schema.define(:version => 20130307215204) do
   end
 
   create_table "categories", :force => true do |t|
+    t.string   "title"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "groups", :force => true do |t|
     t.string   "title"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
@@ -49,6 +55,20 @@ ActiveRecord::Schema.define(:version => 20130307215204) do
     t.string   "title"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "support_comments", :force => true do |t|
+    t.string   "comment"
+    t.integer  "support_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "work_request_comments", :force => true do |t|
+    t.string   "comment"
+    t.integer  "workrequest_id"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
   end
 
 end
