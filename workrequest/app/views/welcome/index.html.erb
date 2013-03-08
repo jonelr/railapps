@@ -1,2 +1,4 @@
-<h1>Welcome#index</h1>
-<p>Find me in app/views/welcome/index.html.erb</p>
+<ul data-role="listview" data-inset="true">
+	<li><%= link_to "Work Request", work_requests_path, :data=>{:ajax=>"false"} %></li>
+	<li><%= link_to "Support", "#" %></li>
+</ul>

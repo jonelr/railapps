@@ -1,7 +1,7 @@
 <%= form_for(@work_request) do |f| %>
   <% if @work_request.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@work_request.errors.count, "error") %> prohibited this work_request from being saved:</h2>
+      <h2><%= pluralize(@work_request.errors.count, "error") %> prohibited this work request from being saved:</h2>
 
       <ul>
       <% @work_request.errors.full_messages.each do |msg| %>
@@ -11,39 +11,25 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :title %><br />
-    <%= f.text_field :title %>
-  </div>
-  <div class="field">
-    <%= f.label :businessunit_id %><br />
-    <%= collection_select(:work_request, :businessunit_id, BusinessUnit.all, :id, :title, {:include_blank => 'Please select a business unit'}) %>
-  </div>
-  <div class="field">
-    <%= f.label :category_id %><br />
-    <%= collection_select(:work_request, :category_id, Category.all,:id,:title ,{:include_blank => 'Please select a category'}) %>
-  </div>
-  <div class="field">
-    <%= f.label :status_id %><br />
-    <%= collection_select(:work_request, :status_id, Status.all,:id,:title,{:include_blank => 'Please select a status'}) %>
-  </div>
-  <div class="field">
-    <%= f.label :plant_id %><br />
-    <%= collection_select(:work_request, :plant_id, Plant.all,:id,:title, {:include_blank => 'Please select a plant'}) %>
-  </div>
-  <div class="field">
-    <%= f.label :area_id %><br />
-    <%= collection_select(:work_request, :area_id, Area.all,:id,:title, {:include_blank => 'Please select an area'}) %>
-    
-  </div>
-  <div class="field">
-    <%= f.label :requestors %><br />
-    <%= f.text_field :requestors %>
-  </div>
-  <div class="field">
-    <%= f.label :queue %><br />
-    <%= f.text_field :queue %>
-  </div>
+  <ul data-role="listview" data-inset="true">
+    <li data-role="list-divider">Title</li>
+    <li><%= f.text_field :title %></li>
+    <li data-role="list-divider">Business Unit</li>
+    <li><%= collection_select(:work_request, :unit_id, Unit.all, :id, :title, {:include_blank => 'Please select a business unit'}) %></li>
+    <li data-role="list-divider">Category</li>
+    <li><%= collection_select(:work_request, :category_id, Category.all,:id,:title ,{:include_blank => 'Please select a category'}) %></li>
+    <li data-role="list-divider">Status</li>
+    <li><%= collection_select(:work_request, :status_id, Status.all,:id,:title,{:include_blank => 'Please select a status'}) %></li>
+    <li data-role="list-divider">Plant</li>
+    <li><%=  collection_select(:work_request, :plant_id, Plant.all,:id,:title, {:include_blank => 'Please select a plant'}) %></li>
+    <li data-role="list-divider">Area</li>
+    <li><%= collection_select(:work_request, :area_id, Area.all,:id,:title, {:include_blank => 'Please select an area'}) %></li>
+    <li data-role="list-divider">Requestors</li>
+    <li><%= f.text_field :requestors %></li>
+    <li data-role="list-divider">Queue</li>
+    <li><%= f.text_field :queue %></li>
+  </ul>
+
   <div class="actions">
     <%= f.submit %>
   </div>

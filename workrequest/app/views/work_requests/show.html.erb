@@ -1,45 +1,33 @@
-<p id="notice"><%= notice %></p>
+<h1>Work Request</h1>
+<div data-role="navbar">
+  <ul>
+    <li><%= link_to "Edit", edit_work_request_path, :data=>{:icon=>"edit"} %></li>
+    <li><%= link_to "List", work_requests_path, :data=>{:icon=>"grid"} %></li>
+  </ul>
+</div>
 
-<p>
-  <b>Title:</b>
-  <%= @work_request.title %>
-</p>
+<ul data-role="listview" data-inset="true">
+  <li data-role="list-divider">Title</li>
+  <li><%= @work_request.title %></li>
 
-<p>
-  <b>Businessunit:</b>
-  <%= @work_request.businessunit_id %>
-</p>
+  <li data-role="list-divider">Business Unit</li>
+  <li><%= @work_request.unit.title %></li>
 
-<p>
-  <b>Category:</b>
-  <%= @work_request.category_id %>
-</p>
+  <li data-role="list-divider">Category</li>
+  <li><%= @work_request.category.title %></li>
 
-<p>
-  <b>Status:</b>
-  <%= @work_request.status_id %>
-</p>
+  <li data-role="list-divider">Status</li>
+  <li><%= @work_request.status.title %></li>
 
-<p>
-  <b>Plant:</b>
-  <%= @work_request.plant_id %>
-</p>
+  <li data-role="list-divider">Plant</li>
+  <li><%= @work_request.plant.title %></li>
 
-<p>
-  <b>Area:</b>
-  <%= @work_request.area_id %>
-</p>
+  <li data-role="list-divider">Area</li>
+  <li><%= @work_request.area.title %></li>
 
-<p>
-  <b>Requestors:</b>
-  <%= @work_request.requestors %>
-</p>
+  <li data-role="list-divider">Requestors</li>
+  <li><%= @work_request.requestors %></li>
 
-<p>
-  <b>Queue:</b>
-  <%= @work_request.queue %>
-</p>
-
-
-<%= link_to 'Edit', edit_work_request_path(@work_request) %> |
-<%= link_to 'Back', work_requests_path %>
+  <li data-role="list-divider">Queue</li>
+  <li><%= @work_request.queue %></li>
+</ul>
