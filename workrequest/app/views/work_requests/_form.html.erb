@@ -17,23 +17,24 @@
   </div>
   <div class="field">
     <%= f.label :businessunit_id %><br />
-    <%= f.number_field :businessunit_id %>
+    <%= collection_select(:workrequest, :businessunit_id, BusinessUnit.all, :id, :title) %>
   </div>
   <div class="field">
     <%= f.label :category_id %><br />
-    <%= f.number_field :category_id %>
+    <%= collection_select(:workrequest, :category_id, Category.all,:id,:title) %>
   </div>
   <div class="field">
     <%= f.label :status_id %><br />
-    <%= f.number_field :status_id %>
+    <%= collection_select(:workrequest, :status_id, Status.all,:id,:title) %>
   </div>
   <div class="field">
     <%= f.label :plant_id %><br />
-    <%= f.number_field :plant_id %>
+    <%= collection_select(:workrequest, :plant_id, Plant.all,:id,:title) %>
   </div>
   <div class="field">
     <%= f.label :area_id %><br />
-    <%= f.number_field :area_id %>
+    <%= collection_select(:workrequest, :area_id, Area.all,:id,:title) %>
+    
   </div>
   <div class="field">
     <%= f.label :requestors %><br />
