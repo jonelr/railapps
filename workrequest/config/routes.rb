@@ -1,4 +1,6 @@
 Workrequest::Application.routes.draw do
+  resources :supports
+
   resources :work_requests
 
   resources :profiles

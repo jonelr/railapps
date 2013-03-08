@@ -1,0 +1,55 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @support.title %>
+</p>
+
+<p>
+  <b>Workrequest:</b>
+  <%= @support.workrequest_id %>
+</p>
+
+<p>
+  <b>Category:</b>
+  <%= @support.category_id %>
+</p>
+
+<p>
+  <b>Assignedto:</b>
+  <%= @support.assignedto_id %>
+</p>
+
+<p>
+  <b>Status:</b>
+  <%= @support.status_id %>
+</p>
+
+<p>
+  <b>Plant:</b>
+  <%= @support.plant_id %>
+</p>
+
+<p>
+  <b>Businessunit:</b>
+  <%= @support.businessunit_id %>
+</p>
+
+<p>
+  <b>Queue:</b>
+  <%= @support.queue %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @support.description %>
+</p>
+
+<p>
+  <b>Created by:</b>
+  <%= @support.created_by %>
+</p>
+
+
+<%= link_to 'Edit', edit_support_path(@support) %> |
+<%= link_to 'Back', supports_path %>

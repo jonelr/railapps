@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  title: MyString
+  workrequest_id: 1
+  category_id: 1
+  assignedto_id: 1
+  status_id: 1
+  plant_id: 1
+  businessunit_id: 1
+  queue: MyString
+  description: MyText
+  created_by: MyString
+
+two:
+  title: MyString
+  workrequest_id: 1
+  category_id: 1
+  assignedto_id: 1
+  status_id: 1
+  plant_id: 1
+  businessunit_id: 1
+  queue: MyString
+  description: MyText
+  created_by: MyString
