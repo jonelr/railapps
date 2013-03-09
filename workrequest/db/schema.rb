@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130308221627) do
+ActiveRecord::Schema.define(:version => 20130309001612) do
 
   create_table "areas", :force => true do |t|
     t.string   "title"
@@ -31,8 +31,14 @@ ActiveRecord::Schema.define(:version => 20130308221627) do
     t.datetime "updated_at", :null => false
   end
 
-  create_table "groups", :force => true do |t|
-    t.string   "title"
+  create_table "comments", :force => true do |t|
+    t.text     "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "companies", :force => true do |t|
+    t.string   "name"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
@@ -43,6 +49,18 @@ ActiveRecord::Schema.define(:version => 20130308221627) do
     t.string   "lookup_value"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
+  end
+
+  create_table "metadata", :force => true do |t|
+    t.integer  "analyst_hours"
+    t.integer  "bw_hours"
+    t.integer  "web_hours"
+    t.integer  "abap_hours"
+    t.string   "analysts"
+    t.string   "developers"
+    t.string   "transports"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
   end
 
   create_table "plants", :force => true do |t|
@@ -57,6 +75,7 @@ ActiveRecord::Schema.define(:version => 20130308221627) do
     t.string   "email"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.integer  "company_id"
   end
 
   create_table "statuses", :force => true do |t|
@@ -85,6 +104,7 @@ ActiveRecord::Schema.define(:version => 20130308221627) do
     t.string   "created_by"
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
+    t.integer  "company_id"
   end
 
   create_table "units", :force => true do |t|
@@ -130,6 +150,8 @@ ActiveRecord::Schema.define(:version => 20130308221627) do
     t.datetime "updated_at",  :null => false
     t.string   "created_by"
     t.integer  "unit_id"
+    t.integer  "company_id"
+    t.integer  "profile_id"
   end
 
 end
