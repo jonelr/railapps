@@ -11,18 +11,15 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :firstname %><br />
-    <%= f.text_field :firstname %>
-  </div>
-  <div class="field">
-    <%= f.label :lastname %><br />
-    <%= f.text_field :lastname %>
-  </div>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.text_field :email %>
-  </div>
+  <ul data-role="listview" data-inset="true">
+    <li data-role="list-divider">Firstname</li>
+    <li><%= f.text_field :firstname %></li>
+    <li data-role="list-divider">Lastname</li>
+    <li><%= f.text_field :lastname %></li>
+    <li data-role="list-divider">Email</li>
+    <li><%= f.text_field :email %></li>
+  </ul>
+
   <div class="actions">
     <%= f.submit %>
   </div>

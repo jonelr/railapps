@@ -1,20 +1,16 @@
-<p id="notice"><%= notice %></p>
+<h1>Profile</h1>
 
-<p>
-  <b>Firstname:</b>
-  <%= @profile.firstname %>
-</p>
+<div data-role="navbar">
+	<ul>
+		<li><%= link_to "Edit",  edit_profile_path(@profile) %></li>
+	</ul>
+</div>
 
-<p>
-  <b>Lastname:</b>
-  <%= @profile.lastname %>
-</p>
-
-<p>
-  <b>Email:</b>
-  <%= @profile.email %>
-</p>
-
-
-<%= link_to 'Edit', edit_profile_path(@profile) %> |
-<%= link_to 'Back', profiles_path %>
+<ul data-role="listview" data-inset="true">
+	<li data-role="list-divider">First name</li>
+	<li><%= @profile.firstname %></li>
+	<li data-role="list-divider">Last name</li>
+	<li><%= @profile.lastname %></li>
+	<li data-role="list-divider">Email</li>
+	<li><%= @profile.email %></li>
+</ul>

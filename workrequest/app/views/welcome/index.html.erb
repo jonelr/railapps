@@ -1,4 +1,7 @@
 <ul data-role="listview" data-inset="true">
 	<li><%= link_to "Work Request", work_requests_path, :data=>{:ajax=>"false"} %></li>
 	<li><%= link_to "Support", "#" %></li>
+	<% if @profile %>
+	<li><%= link_to "Profile", edit_profile_path(@profile) %></li>
+	<% end %>
 </ul>

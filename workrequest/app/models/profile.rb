@@ -7,4 +7,6 @@ class Profile < ActiveRecord::Base
   belongs_to :company
 
   scope :by_email, lambda {|email| where('email=?',email)}
+
+  validates :email, :uniqueness => true
 end
