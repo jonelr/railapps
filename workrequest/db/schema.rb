@@ -31,12 +31,6 @@ ActiveRecord::Schema.define(:version => 20130309001612) do
     t.datetime "updated_at", :null => false
   end
 
-  create_table "comments", :force => true do |t|
-    t.text     "name"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
   create_table "companies", :force => true do |t|
     t.string   "name"
     t.datetime "created_at", :null => false
@@ -49,18 +43,6 @@ ActiveRecord::Schema.define(:version => 20130309001612) do
     t.string   "lookup_value"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
-  end
-
-  create_table "metadata", :force => true do |t|
-    t.integer  "analyst_hours"
-    t.integer  "bw_hours"
-    t.integer  "web_hours"
-    t.integer  "abap_hours"
-    t.string   "analysts"
-    t.string   "developers"
-    t.string   "transports"
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
   end
 
   create_table "plants", :force => true do |t|

@@ -11,6 +11,10 @@
     </div>
   <% end %>
 
+  <ul data-role="listview" data-inset="true">
+    <li data-role="list-divider">Name</li>
+    <li><%= f.text_field :name %></li>
+  </ul>
   <div class="actions">
     <%= f.submit %>
   </div>

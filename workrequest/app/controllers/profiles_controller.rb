@@ -35,6 +35,11 @@ class ProfilesController < ApplicationController
   # GET /profiles/1/edit
   def edit
     @profile = Profile.find(params[:id])
+
+    if @profile.email != current_user.email
+      redirect_to :action=>"new"
+    end
+
     if @profile.nil?
       redirect_to :action=>"new"
     end

@@ -1,5 +1,16 @@
-<p id="notice"><%= notice %></p>
+<div data-role="navbar">
+	<ul>
+		<li><%= link_to "Edit", edit_company_path(@company), :data=>{:icon=>"edit"} %></li>
+		<li><%= link_to "List", companies_path, :data=>{:icon=>"grid"} %></li>
 
+	</ul>
+</div>
+<ul data-role="listview" data-inset="true">
+	<li data-role="list-divider">Name</li>
+	<li><%= @company.name %></li>
+	<li data-role="list-divider">Members</li>
+	<% @company.profiles.each do |profile|%>
+	<li><%= profile.firstname + " " + profile.lastname %></li>
+	<% end %>
+</ul>
 
-<%= link_to 'Edit', edit_company_path(@company) %> |
-<%= link_to 'Back', companies_path %>
