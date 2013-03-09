@@ -1,4 +1,6 @@
 Workrequest::Application.routes.draw do
+  resources :companies
+
   resources :supports
 
   resources :work_requests
