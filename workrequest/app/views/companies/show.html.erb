@@ -10,7 +10,7 @@
 	<li><%= @company.name %></li>
 	<li data-role="list-divider">Members</li>
 	<% @company.profiles.each do |profile|%>
-	<li><%= profile.firstname + " " + profile.lastname %></li>
+	<li><%= link_to profile.firstname + " " + profile.lastname, profile %></li>
 	<% end %>
 </ul>
 

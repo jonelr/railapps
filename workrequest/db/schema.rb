@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130309001612) do
+ActiveRecord::Schema.define(:version => 20130310003605) do
 
   create_table "areas", :force => true do |t|
     t.string   "title"
@@ -55,9 +55,10 @@ ActiveRecord::Schema.define(:version => 20130309001612) do
     t.string   "firstname"
     t.string   "lastname"
     t.string   "email"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
     t.integer  "company_id"
+    t.boolean  "ispoweruser"
   end
 
   create_table "statuses", :force => true do |t|

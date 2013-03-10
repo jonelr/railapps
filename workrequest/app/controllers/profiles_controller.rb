@@ -37,7 +37,7 @@ class ProfilesController < ApplicationController
     @profile = Profile.find(params[:id])
 
     if @profile.email != current_user.email
-      redirect_to :action=>"new"
+      redirect_to root_url
     end
 
     if @profile.nil?

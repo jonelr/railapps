@@ -1,10 +1,12 @@
 <h1>Profile</h1>
 
+<% if @profile.email == current_user.email %>
 <div data-role="navbar">
 	<ul>
 		<li><%= link_to "Edit",  edit_profile_path(@profile) %></li>
 	</ul>
 </div>
+<% end -%>
 
 <ul data-role="listview" data-inset="true">
 	<li data-role="list-divider">First name</li>
